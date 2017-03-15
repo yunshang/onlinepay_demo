@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "onlinepay_demo"
+require "onlinepay"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

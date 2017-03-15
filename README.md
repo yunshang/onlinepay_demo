@@ -2,25 +2,24 @@
 
 a  simple onlinepay sdk
 
-## Installation
+## Before use
 
-Add this line to your application's Gemfile:
 
 ```ruby
-gem install onlinepay_demo
+  bundle
+  rake spec  # run spec
 ```
 
 
-### Configuration
-```ruby
-OnlinepayDemo.merchant_key = 'YOUR_KEY'
-OnlinepayDemo.env = 'production'     # The default value is'development', which automatically                                        identifies the rack environment。
-```
 
 ### Payments
 
 ```ruby
-response = UnionpayOpen::Service.payment(product: 'Your Product',
+ service = Onlinepay::Service.new merchant_key: @@merchant_key, test: true, env: @@env
+```
+
+```ruby
+service.payment(product: 'Your Product',
                                         amount: "1000",
                                         currency: 'CND',
                                         redirectSuccessUrl: "https://your-site.com/success")
@@ -31,21 +30,20 @@ response = UnionpayOpen::Service.payment(product: 'Your Product',
 ### List
 
 ```ruby
-response = UnionpayOpen::Wap.query_list(date_from: '2016-05-11',
-                                         page: "1",
-                                         per_page: "1")
+service.query_list(date_from: '2016-05-11', page: "1", per_page: "1")
 
-response = UnionpayOpen::Wap.query_single(payment_token: '3232323322')
+service.query_single(payment_token: '3232323322')
 ```
 ### Payment Confirmation
+
 ```ruby
-response = UnionpayOpen::Wap.payment_confirmation(payment_token: '3232323322')
+service.payment_confirmation(payment_token: '3232323322')
 ```
 
 ### Payouts
 
 ```ruby
-response = UnionpayOpen::Wap.payout(amount: '3232323322',
+service.payout(amount: '3232323322',
                                     currency: 'CNY',
                                     orderNumber: '2333',
                                     walletToken: 'fefefef',
@@ -64,5 +62,5 @@ response = UnionpayOpen::Wap.payout(amount: '3232323322',
 ### Balance
 
 ```ruby
-response = UnionpayOpen::Wap.balance(currency: 'CNY')
+service.balance(currency: 'CNY')
 ```
