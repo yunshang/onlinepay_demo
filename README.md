@@ -21,9 +21,9 @@ OnlinepayDemo.env = 'production'     # The default value is'development', which 
 
 ```ruby
 response = UnionpayOpen::Service.payment(product: 'Your Product',
-										 amount: "1000",
-                                         currency: 'CND',
-										 redirectSuccessUrl: "https://your-site.com/success")
+                                        amount: "1000",
+                                        currency: 'CND',
+                                        redirectSuccessUrl: "https://your-site.com/success")
 ```
 
 
