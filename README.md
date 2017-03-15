@@ -20,9 +20,10 @@ a  simple onlinepay sdk
 
 ```ruby
 service.payment(product: 'Your Product',
-                                        amount: "1000",
-                                        currency: 'CND',
-                                        redirectSuccessUrl: "https://your-site.com/success")
+                 amount: "1000",
+                 currency: 'CND',
+                 redirectSuccessUrl: "https://your-site.com/success"
+               )
 ```
 
 
@@ -43,20 +44,21 @@ service.payment_confirmation(payment_token: '3232323322')
 ### Payouts
 
 ```ruby
-service.payout(amount: '3232323322',
-                                    currency: 'CNY',
-                                    orderNumber: '2333',
-                                    walletToken: 'fefefef',
-                                    bankAccount: {
-                                    accountHolder: "John Snow",
-                                    accountNumber: "11111111111111111",
-                                    bankCode: "BOC"
-                                    },
-                                    billing: {
-                                    state: "11",
-                                    countryCode: "CHN",
-                                    city: "1000"
-                                    })
+service.payout( amount: '3232323322',
+                currency: 'CNY',
+                orderNumber: '2333',
+                walletToken: 'fefefef',
+                bankAccount: {
+                  accountHolder: "John Snow",
+                  accountNumber: "11111111111111111",
+                  bankCode: "BOC"
+                },
+                billing: {
+                  state: "11",
+                  countryCode: "CHN",
+                  city: "1000"
+                }
+              )
 ```
 
 ### Balance
