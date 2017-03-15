@@ -15,7 +15,7 @@ a  simple onlinepay sdk
 ### Payments
 
 ```ruby
- service = Onlinepay::Service.new merchant_key: @@merchant_key, test: true, env: @@env
+ service = Onlinepay::Service.new merchant_key: 'xxxxxxxxxx', test: true, env: 'development'
 ```
 
 ```ruby
